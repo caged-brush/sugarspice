@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Header = () => {
@@ -12,8 +13,8 @@ const Header = () => {
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
-              className="h-8 w-auto"
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+              className="h-20 rounded-full w-auto"
+              src="../assets/images/sugarspice logo.jpeg"
               alt=""
             />
           </a>
@@ -21,9 +22,12 @@ const Header = () => {
 
         {/* Center - Menu */}
         <div className="hidden lg:flex lg:justify-center lg:gap-x-12">
-          <a href="#" className="text-md font-semibold leading-6">
+          <Link className="text-md font-semibold leading-6" href="/">
             Home
-          </a>
+          </Link>
+          <Link className="text-md font-semibold leading-6" href="/products">
+            Product
+          </Link>
           <a href="#" className="text-md font-semibold leading-6">
             About
           </a>
@@ -33,7 +37,10 @@ const Header = () => {
           <a href="#" className="text-md font-semibold leading-6">
             Gallery
           </a>
-          <a href="#" className="text-md font-semibold leading-6 whitespace-nowrap">
+          <a
+            href="#"
+            className="text-md font-semibold leading-6 whitespace-nowrap"
+          >
             Book Online
           </a>
         </div>

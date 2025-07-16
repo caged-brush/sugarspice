@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -12,10 +13,12 @@ const Header = () => {
         <div className="flex">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
+            <Image
               className="h-20 rounded-full w-auto"
-              src="../assets/images/sugarspice logo.jpeg"
-              alt=""
+              src="/assets/images/sugarspice logo.jpeg"
+              alt="Sugar & Spice Logo"
+              width={80}
+              height={80}
             />
           </a>
         </div>
@@ -31,19 +34,18 @@ const Header = () => {
           <Link className="text-md font-semibold leading-6" href="/services">
             Services
           </Link>
-          <a href="#" className="text-md font-semibold leading-6">
+          <Link className="text-md font-semibold leading-6" href="/about">
             About
-          </a>
-      
-          <a href="#" className="text-md font-semibold leading-6">
+          </Link>
+          <Link className="text-md font-semibold leading-6" href="/gallery">
             Gallery
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/book"
             className="text-md font-semibold leading-6 whitespace-nowrap"
           >
             Book Online
-          </a>
+          </Link>
         </div>
 
         {/* Right - Login */}

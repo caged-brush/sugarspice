@@ -23,12 +23,12 @@ export default function Hero() {
           <div className="hidden sm:mb-8 sm:flex sm:justify-center"></div>
           <div className="text-center">
             <h1 className="text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
-              Kamloops' Original Lash & Brow Studio est. 2008
+              Kamloops&apos; Original Lash &amp; Brow Studio est. 2008
             </h1>
             <p className="mt-8 text-lg font-medium text-pretty  sm:text-xl/8">
               Our vision is to consistently provide exceptional customer
               service, state of the art techniques and personalized care in a
-              welcoming environment you'll love.
+              welcoming environment you&apos;ll love.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
@@ -42,8 +42,11 @@ export default function Hero() {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <img
-          src="../assets/images/hero-image.jpg"
+        <Image
+          src="/assets/images/hero-image.jpg"
+          alt="Hero"
+          width={850}
+          height={850}
           className="rounded-4xl w-full h-[850px]"
         />
       </div>

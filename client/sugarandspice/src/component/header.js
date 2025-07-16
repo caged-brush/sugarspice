@@ -28,12 +28,13 @@ const Header = () => {
           <Link className="text-md font-semibold leading-6" href="/products">
             Product
           </Link>
+          <Link className="text-md font-semibold leading-6" href="/services">
+            Services
+          </Link>
           <a href="#" className="text-md font-semibold leading-6">
             About
           </a>
-          <a href="#" className="text-md font-semibold leading-6">
-            Services
-          </a>
+      
           <a href="#" className="text-md font-semibold leading-6">
             Gallery
           </a>

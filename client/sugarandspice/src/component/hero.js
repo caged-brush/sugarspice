@@ -1,21 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
-];
-
 export default function Hero() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-2">
       <div className="relative isolate px-4 pt-10 sm:px-6 lg:px-8">

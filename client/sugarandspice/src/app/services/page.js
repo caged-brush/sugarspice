@@ -4,6 +4,7 @@ function page() {
   return (
     <>
       <Header />
+      
     </>
   );
 }

@@ -3,6 +3,10 @@ import Header from "@/component/header";
 import Footer from "@/component/footer";
 import Image from "next/image";
 
+export const metadata = {
+  title: "About Us",
+  description: "Learn more about us",
+};
 function page() {
   return (
     <>

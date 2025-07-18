@@ -3,6 +3,11 @@ import Footer from "@/component/footer";
 import Header from "@/component/header";
 import React from "react";
 
+export const metadata = {
+  title: "Lashes",
+  description: "Learn more about our lash services",
+};
+
 function page() {
   return (
     <>

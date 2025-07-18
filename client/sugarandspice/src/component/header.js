@@ -16,7 +16,7 @@ const Header = () => {
       >
         {/* Left - Logo */}
         <div className="flex items-center">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Sugar &amp; Spice</span>
             <Image
               className="h-16 w-16 rounded-xl"

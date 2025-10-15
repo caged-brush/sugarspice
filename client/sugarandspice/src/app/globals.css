@@ -15,12 +15,26 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0e5b5b;
-    --foreground: #D1B26F;
+    --foreground: #d1b26f;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* We'll replace this dynamically via layout.js */
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: inherit; /* will inherit Ms Madi when we add its class to <body> */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Ms Madi", cursive;
 }

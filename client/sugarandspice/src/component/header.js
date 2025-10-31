@@ -1,61 +1,46 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
 import Image from "next/image";
+import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Header = () => {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header>
-      <nav
-        className="mx-auto max-w-7xl flex items-center justify-between p-4 lg:grid lg:grid-cols-3 lg:p-6 lg:px-8"
-        aria-label="Global"
-      >
-        {/* Left - Logo */}
-        <div className="flex items-center">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Sugar &amp; Spice</span>
-            <Image
-              className="h-16 w-16 rounded-xl"
-              src="/assets/images/sugarspice logo.jpeg"
-              alt="Sugar &amp; Spice Logo"
-              width={100}
-              height={100}
-            />
-          </Link>
-        </div>
+    <header className="fixed top-0 w-full h-20 z-50 bg-black/90 backdrop-blur-md shadow-lg">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between h-full px-6 lg:px-8">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/assets/images/sugarspice logo.jpeg"
+            alt="Sugar & Spice Logo"
+            width={60}
+            height={60}
+            className="rounded-xl shadow-md"
+          />
+          <span className="text-[#d1b26f] font-[Ms Madi] text-xl select-none">
+            Sugar & Spice
+          </span>
+        </Link>
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center">
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Open main menu"
-          >
-            <Bars3Icon className="h-6 w-6" />
-          </button>
-        </div>
-
-        {/* Center - Menu (Desktop) */}
-        <div className="hidden lg:flex lg:justify-center lg:gap-x-12">
-          <Link className="text-md font-semibold leading-6" href="/">
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-8 font-semibold text-[#d1b26f]">
+          <Link href="/" className="hover:text-white transition-colors">
             Home
           </Link>
-          <Link className="text-md font-semibold leading-6" href="/products">
-            Product
+          <Link href="/products" className="hover:text-white transition-colors">
+            Products
           </Link>
+
           {/* Services Dropdown */}
           <div className="relative">
             <button
-              className="text-md font-semibold leading-6 flex items-center gap-1 focus:outline-none"
-              onClick={() => setServicesOpen((open) => !open)}
-              onBlur={() => setTimeout(() => setServicesOpen(false), 150)}
-              aria-haspopup="true"
-              aria-expanded={servicesOpen}
+              onClick={() => setServicesOpen(!servicesOpen)}
+              onBlur={() => setTimeout(() => setServicesOpen(false), 200)}
+              className="flex items-center gap-1 hover:text-white transition-colors"
             >
               Services
               <svg
@@ -70,143 +55,126 @@ const Header = () => {
                 <path d="M19 9l-7 7-7-7" />
               </svg>
             </button>
+
             {servicesOpen && (
-              <div className="absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
-                <div className="py-1 flex flex-col">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className="absolute top-8 left-0 w-48 bg-black text-[#d1b26f] rounded-lg shadow-xl border border-[#d1b26f] overflow-hidden"
+              >
+                <div className="flex flex-col">
                   <Link
-                    href="/services/lashes"
-                    className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    href="/services/facials"
+                    className="px-4 py-2 hover:bg-[#d1b26f] hover:text-black transition-colors"
                   >
-                    Lashes
+                    Facials
                   </Link>
                   <Link
                     href="/services/brows"
-                    className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    className="px-4 py-2 hover:bg-[#d1b26f] hover:text-black transition-colors"
                   >
                     Brows
                   </Link>
                   <Link
-                    href="/services/waxing"
-                    className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    href="/services/lashes"
+                    className="px-4 py-2 hover:bg-[#d1b26f] hover:text-black transition-colors"
                   >
-                    Waxing
+                    Lashes
                   </Link>
                   <Link
-                    href="/services/facials"
-                    className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    onClick={() => setMenuOpen(false)}
+                    href="/services/sweetPackages"
+                    className="px-4 py-2 hover:bg-[#d1b26f] hover:text-black transition-colors"
                   >
-                    Facials & Skin care
+                    Sweet Packages
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             )}
           </div>
-          <Link className="text-md font-semibold leading-6" href="/about">
+
+          <Link href="/about" className="hover:text-white transition-colors">
             About
           </Link>
-          <Link className="text-md font-semibold leading-6" href="/gallery">
+          <Link href="/gallery" className="hover:text-white transition-colors">
             Gallery
           </Link>
           <Link
             href="https://sugarandspicebeautybar.janeapp.com/"
-            className="text-md font-semibold leading-6 whitespace-nowrap"
+            className="px-4 py-2 bg-[#d1b26f] text-black rounded-full font-semibold hover:bg-gradient-to-r hover:from-[#d1b26f] hover:to-[#f5e1a4] transition-all"
           >
             Book Online
           </Link>
         </div>
 
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-end lg:hidden">
-            <div className="bg-white w-2/3 max-w-xs h-full p-6 flex flex-col">
-              <button
-                type="button"
-                className="self-end mb-6"
-                onClick={() => setMenuOpen(false)}
-                aria-label="Close menu"
-              >
-                <XMarkIcon className="h-6 w-6 text-gray-700" />
-              </button>
-              <nav className="flex flex-col gap-y-6">
-                <Link
-                  href="/"
-                  className="text-lg font-semibold"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/products"
-                  className="text-lg font-semibold"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Product
-                </Link>
-                {/* Mobile Services Dropdown */}
-                <details>
-                  <summary className="text-lg font-semibold cursor-pointer">
-                    Services
-                  </summary>
-                  <div className="flex flex-col ml-4 mt-2">
-                    <Link
-                      href="/services/lashes"
-                      className="py-1 text-gray-700"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      Lashes
-                    </Link>
-                    <Link
-                      href="/services/brows"
-                      className="py-1 text-gray-700"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      Brows
-                    </Link>
-                    <Link
-                      href="/services/waxing"
-                      className="py-1 text-gray-700"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      Waxing
-                    </Link>
-                    <Link
-                      href="/services/facials"
-                      className="py-1 text-gray-700"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      Facials & Skin care
-                    </Link>
-                  </div>
-                </details>
-                <Link
-                  href="/about"
-                  className="text-lg font-semibold"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  About
-                </Link>
-                <Link
-                  href="/gallery"
-                  className="text-lg font-semibold"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Gallery
-                </Link>
-                <Link
-                  href="/book"
-                  className="text-lg font-semibold"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Book Online
-                </Link>
-              </nav>
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden text-[#d1b26f]"
+          onClick={() => setMenuOpen(true)}
+        >
+          <Bars3Icon className="h-6 w-6" />
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex justify-end"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-black w-2/3 max-w-sm h-full p-6 flex flex-col gap-6 text-[#d1b26f] overflow-y-auto"
+              initial={{ x: 300 }}
+              animate={{ x: 0 }}
+              exit={{ x: 300 }}
+              transition={{ type: "tween" }}
+            >
+              <button className="self-end mb-4" onClick={() => setMenuOpen(false)}>
+                <XMarkIcon className="h-6 w-6 text-[#d1b26f]" />
+              </button>
+              <Link href="/" onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
+              <Link href="/products" onClick={() => setMenuOpen(false)}>
+                Products
+              </Link>
+              <details className="group">
+                <summary className="cursor-pointer select-none">Services</summary>
+                <div className="flex flex-col ml-4 mt-2 gap-1">
+                  <Link href="/services/facials" onClick={() => setMenuOpen(false)}>
+                    Facials
+                  </Link>
+                  <Link href="/services/brows" onClick={() => setMenuOpen(false)}>
+                    Brows
+                  </Link>
+                  <Link href="/services/lashes" onClick={() => setMenuOpen(false)}>
+                    Lashes
+                  </Link>
+                  <Link href="/services/sweetPackages" onClick={() => setMenuOpen(false)}>
+                    Sweet Packages
+                  </Link>
+                </div>
+              </details>
+              <Link href="/about" onClick={() => setMenuOpen(false)}>
+                About
+              </Link>
+              <Link href="/gallery" onClick={() => setMenuOpen(false)}>
+                Gallery
+              </Link>
+              <Link
+                href="https://sugarandspicebeautybar.janeapp.com/"
+                className="px-4 py-2 bg-[#d1b26f] text-black rounded-full font-semibold hover:bg-gradient-to-r hover:from-[#d1b26f] hover:to-[#f5e1a4] transition-all"
+                onClick={() => setMenuOpen(false)}
+              >
+                Book Online
+              </Link>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
-};
-
-export default Header;
+}

@@ -28,3 +28,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+export const metadata = {
+  title: "Facials",
+  description: "Luxury facial treatments at Sugar & Spice Beauty Bar",
+};

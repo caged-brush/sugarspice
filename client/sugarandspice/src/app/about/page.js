@@ -1,83 +1,121 @@
+"use client";
 import React from "react";
 import Header from "@/component/header";
 import Footer from "@/component/footer";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  FaUsers,
+  FaFire,
+  FaHandSparkles,
+  FaGem,
+  FaBalanceScale,
+} from "react-icons/fa";
 
-export const metadata = {
-  title: "About Us",
-  description: "Learn more about us",
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
+  }),
 };
-function page() {
+
+const coreValues = [
+  {
+    title: "Teamwork",
+    desc: "Creating a culture within our team based on effective communication, respect, integrity, and an understanding that together we can achieve more.",
+    icon: <FaUsers className="text-[#d1b26f] w-8 h-8" />,
+  },
+  {
+    title: "Passion",
+    desc: "Our drive for excellence fuels continued growth and refinement in the beauty wellness industry.",
+    icon: <FaFire className="text-[#d1b26f] w-8 h-8" />,
+  },
+  {
+    title: "Respect",
+    desc: "Honoring our clients and each other by valuing thoughts, feelings, and preferences.",
+    icon: <FaHandSparkles className="text-[#d1b26f] w-8 h-8" />,
+  },
+  {
+    title: "Excellence",
+    desc: "Delivering detail-oriented, exceptional experiences that surpass expectations.",
+    icon: <FaGem className="text-[#d1b26f] w-8 h-8" />,
+  },
+  {
+    title: "Integrity",
+    desc: "Commitment to honesty, always acting in the best interest of our clients.",
+    icon: <FaBalanceScale className="text-[#d1b26f] w-8 h-8" />,
+  },
+];
+
+export default function Page() {
   return (
     <>
       <Header />
-      <div className="flex justify-center mt-8">
-        <Image
-          src="/assets/images/about-us.jpeg"
-          alt="About Us"
-          width={384}
-          height={384}
-          className="rounded-4xl"
-        />
-      </div>
-      <div className="p-6 mr-32 ml-32 lg:px-8">
-        <h1 className="text-3xl font-bold mt-10">About Us</h1>
-        <h2 className="text-xl font-semibold mt-4">ENJOY YOUR TIME WITH US</h2>
-        <p className="mt-4 font-thin text-2xl text-gray-400">
-          Our Sugar &amp; Spice family strives to be the best team of beauty
-          professionals we can be. We are committed to continued education,
-          industry advancement and delivering the highest quality treatments and
-          products to our valued guests. With superior customer service and our
-          uplifting atmosphere, we guarantee you&apos;ll enjoy your time with
-          us.
-        </p>
-        <h2 className="text-xl font-semibold mt-4">Core Values</h2>
-        <ul className="list-disc ml-6 mt-4">
-          <li className="flex flex-row">
-            <span className="font-bold text-lg mr-2">Teamwork</span>
-            <p>
-              creating a culture within our team based on effective
-              communication, respect, integrity and an understanding that
-              together we can achieve more, benefiting all employees, business
-              partners and clients.
+
+      {/* Hero */}
+      <section className="relative flex flex-col lg:flex-row items-center justify-center bg-black px-4 sm:px-8 lg:px-16 pt-24 pb-16 overflow-hidden">
+        <motion.div
+          className="lg:w-1/2 text-center lg:text-left"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-[Ms Madi] font-bold text-[#d1b26f] drop-shadow-[0_2px_4px_rgba(209,178,111,0.6)]">
+            About Sugar & Spice
+          </h1>
+          <p className="mt-6 text-lg sm:text-xl text-[#f5e1a4] leading-relaxed">
+            We combine luxury and technology to create the ultimate beauty
+            experience. Our treatments are designed to nourish, rejuvenate, and
+            reveal your natural radiance.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="relative w-full max-w-md">
+            <Image
+              src="/assets/images/0K6A0148-1 copy.jpg"
+              alt="About Us"
+              width={400}
+              height={400}
+              className="rounded-4xl shadow-2xl border border-[#d1b26f] object-cover w-full h-auto hover:shadow-[0_0_50px_rgba(209,178,111,0.8)] transition-shadow duration-500"
+            />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Core Values Tiles */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {coreValues.map((value, idx) => (
+          <motion.div
+            key={idx}
+            className="bg-gradient-to-b from-[#1a1a1a] to-[#111111] border border-[#d1b26f] rounded-3xl p-6 flex flex-col items-start gap-4 hover:scale-105 hover:shadow-[0_0_25px_rgba(209,178,111,0.7)] transition-all duration-500"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeUp}
+            custom={idx + 1}
+          >
+            <div className="flex items-center gap-4">
+              {value.icon}
+              <h3 className="text-xl sm:text-2xl font-bold text-[#d1b26f] drop-shadow-[0_1px_2px_rgba(209,178,111,0.8)]">
+                {value.title}
+              </h3>
+            </div>
+            <p className="text-[#f5e1a4] text-base sm:text-lg leading-relaxed">
+              {value.desc}
             </p>
-          </li>
-          <li className="flex flex-row mt-2">
-            <span className="font-bold text-lg mr-2">Passion</span>
-            <p>
-              is what drives and fosters our continued search of knowledge and
-              refinement of our skills as a professional in the beauty wellness
-              industry.
-            </p>
-          </li>
-          <li className="flex flex-row mt-2">
-            <span className="font-bold text-lg mr-2">Respect</span>
-            <p>
-              for each other and our clients by taking their feelings, thoughts,
-              wishes and preferences into consideration.
-            </p>
-          </li>
-          <li className="flex flex-row mt-2">
-            <span className="font-bold text-lg mr-2">Excellence</span>
-            <p>
-              commitment to detail with everything we do. When we surpass the
-              greatest expectations, perform the smallest task to the greatest
-              ability and when our guest cannot contain their experience we have
-              achieved excellence.
-            </p>
-          </li>
-          <li className="flex flex-row mt-2">
-            <span className="font-bold text-lg mr-2">Integrity</span>
-            <p>
-              commitment to honesty with our word, always doing what is in the
-              best interest of our clients.
-            </p>
-          </li>
-        </ul>
-      </div>
+          </motion.div>
+        ))}
+      </section>
+
       <Footer />
     </>
   );
 }
-
-export default page;

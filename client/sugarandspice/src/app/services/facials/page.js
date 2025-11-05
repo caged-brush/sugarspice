@@ -2,6 +2,7 @@
 import Header from "@/component/header";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Footer from "@/component/footer";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -176,6 +177,7 @@ export default function FacialsPage() {
           </motion.div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

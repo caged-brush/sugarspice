@@ -11,7 +11,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-[9999] bg-black/95 backdrop-blur-md shadow-lg">
+    <header className="fixed top-0 w-full z-[10000] bg-black shadow-lg">
       <nav className="max-w-7xl mx-auto flex items-center justify-between h-20 px-6 lg:px-8 relative">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 z-[9999]">
@@ -120,17 +120,18 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-md flex justify-end pointer-events-auto"
+            className="fixed inset-0 z-[10000] bg-black flex justify-end pointer-events-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
             <motion.div
               className="bg-black w-2/3 max-w-sm h-full p-6 flex flex-col gap-6 text-[#d1b26f] overflow-y-auto shadow-xl"
-              initial={{ x: 300 }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: 300 }}
-              transition={{ type: "tween" }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
             >
               <button
                 className="self-end mb-4"
@@ -138,6 +139,7 @@ export default function Header() {
               >
                 <XMarkIcon className="h-6 w-6 text-[#d1b26f]" />
               </button>
+
               <Link href="/" onClick={() => setMenuOpen(false)}>
                 Home
               </Link>
@@ -145,7 +147,9 @@ export default function Header() {
                 Products
               </Link>
               <details className="group">
-                <summary className="cursor-pointer select-none">Services</summary>
+                <summary className="cursor-pointer select-none">
+                  Services
+                </summary>
                 <div className="flex flex-col ml-4 mt-2 gap-1">
                   <Link
                     href="/services/facials"

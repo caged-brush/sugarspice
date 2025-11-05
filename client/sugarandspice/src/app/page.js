@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "@/component/header";
-import Hero from "@/component/hero";
-import Footer from "@/component/footer";
+import Header from "@/component/header.js";
+import Hero from "@/component/hero.js";
+import Footer from "@/component/footer.js";
 
 export const metadata = {
   title: "Home",

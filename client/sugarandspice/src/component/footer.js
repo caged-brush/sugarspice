@@ -72,7 +72,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="hover:text-[#d4af37] transition-colors"
           >
-            433 Lansdowne St, Kamloops, BC
+            435 Lansdowne St, Kamloops, BC
           </a>
         </address>
 

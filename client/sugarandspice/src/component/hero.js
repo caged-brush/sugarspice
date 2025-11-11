@@ -6,10 +6,15 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative bg-black text-[#f5e1a4] overflow-hidden">
-      {/* Animated gold shimmer */}
+    <section
+      className="relative bg-black text-[#f5e1a4] overflow-hidden bg-center bg-cover bg-no-repeat bg-fixed"
+      style={{
+        backgroundImage: "url('/assets/images/SSBB background 3.png')",
+      }}
+    >
+      {/* Animated gold shimmer overlay */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30"
         style={{
           background:
             "linear-gradient(120deg, #d4af37, #000, #b59440, #000, #d4af37)",
@@ -18,7 +23,8 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 flex flex-col-reverse lg:grid lg:grid-cols-2 items-center px-6 sm:px-12 lg:px-20 py-16 sm:py-24 lg:py-32">
+      {/* Main content overlay for readability */}
+      <div className="relative z-10 flex flex-col-reverse lg:grid lg:grid-cols-2 items-center px-6 sm:px-12 lg:px-20 py-16 sm:py-24 lg:py-32 bg-black/70 backdrop-blur-[2px]">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-center lg:text-left"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl ${msMadi.className} text-[#d4af37] drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)] mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl text-[#d4af37] drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)] mb-6">
             Kamloops&apos; Original Lash &amp; Brow Studio
           </h1>
           <p className="text-sm sm:text-base lg:text-lg text-[#f5e1a4]/90 max-w-xl mx-auto lg:mx-0 leading-relaxed">
@@ -88,7 +94,7 @@ export default function Hero() {
 
       {/* WHY CHOOSE US */}
       <div className="relative z-10 text-center px-6 sm:px-12 lg:px-20 py-16 bg-gradient-to-t from-black/90 via-black/80 to-transparent">
-        <h2 className="text-3xl sm:text-4xl ${msMadi.className} text-[#d4af37] mb-6">
+        <h2 className="text-3xl sm:text-4xl text-[#d4af37] mb-6">
           Why Choose Sugar & Spice
         </h2>
         <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-10 text-[#f5e1a4]/80">
@@ -122,7 +128,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Keyframe */}
       <style jsx>{`
         @keyframes goldGlow {
           0% {

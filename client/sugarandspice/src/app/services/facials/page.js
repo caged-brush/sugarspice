@@ -116,7 +116,7 @@ export default function FacialsPage() {
       <main
         className="relative bg-black text-[#d1b26f] pt-24 min-h-screen px-4 sm:px-8 lg:px-16 overflow-hidden bg-center bg-cover bg-fixed"
         style={{
-          backgroundImage: "url('/assets/images/SSBB background 3.png')",
+          backgroundImage: "url('/assets/images/5.png')",
         }}
       >
         {/* Soft dark overlay for readability */}

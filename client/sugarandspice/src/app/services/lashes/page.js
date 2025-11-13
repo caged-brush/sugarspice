@@ -61,16 +61,15 @@ export default function Page() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {[
             {
-              title: "Classic Lash Set",
-              desc: "Soft, natural, and timeless — one lash at a time for effortless beauty and lasting comfort.",
-              price: "$190 • 2 hours",
+              title: "Lash Removal",
+              price: "$35.00 • 45 minutes",
               img: "/assets/images/0K6A0148-1 copy.jpg",
               link: "https://sugarandspicebeautybar.janeapp.com/#/discipline/4/treatment/209",
             },
             {
-              title: "Refill",
-              desc: "Refresh your lash set with our precise 60-minute refill service, keeping your look full and seamless.",
-              price: "$110 • 60 minutes",
+              title: "Dramatic",
+
+              price: "$280.00 • 195 minutes",
               img: "/assets/images/0K6A0244-1 copy.jpg",
               link: "https://sugarandspicebeautybar.janeapp.com/#/discipline/4/treatment/231",
             },

@@ -170,37 +170,41 @@ export default function FacialsPage() {
           {/* Treatments Grid */}
           <section className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {treatments.map((t, i) => (
-              <motion.div
-                key={i}
-                className="bg-[#1a1a1a]/80 p-6 rounded-3xl shadow-lg hover:shadow-[0_0_25px_rgba(209,178,111,0.6)] hover:scale-[1.02] transition-all duration-300"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={fadeUp}
-                custom={i + 1}
-              >
-                {t.href ? (
-                  <Link
-                    href={t.href}
-                    className="text-[#d1b26f] hover:text-white font-bold text-lg sm:text-xl underline transition-colors duration-200"
+              <Link key={i} href={t.href || "#"} className="group block">
+                <motion.div
+                  className="bg-[#1a1a1a]/80 p-8 rounded-3xl border border-[#2e2e2e] shadow-lg 
+                   group-hover:shadow-[0_0_25px_rgba(209,178,111,0.5)] 
+                   group-hover:border-[#d1b26f]/50 
+                   transition-all duration-500 ease-out 
+                   hover:scale-[1.03]"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={fadeUp}
+                  custom={i + 1}
+                >
+                  <span
+                    className="text-[#d1b26f] font-[Ms Madi] font-bold text-lg sm:text-2xl mb-2 
+                       group-hover:text-white transition-colors duration-300"
                   >
                     {t.title}
-                  </Link>
-                ) : (
-                  <span className="text-[#d1b26f] font-bold text-lg sm:text-xl">
-                    {t.title}
                   </span>
-                )}
-                {t.duration && t.price && (
-                  <p className="mt-1 text-[#f5e1a4] font-semibold text-sm sm:text-base">
-                    {t.duration} -{" "}
-                    <span className="text-[#d1b26f]">{t.price}</span>
+
+                  {t.duration && t.price && (
+                    <p className="text-[#f5e1a4] font-semibold text-sm sm:text-base mb-2">
+                      {t.duration} —{" "}
+                      <span className="text-[#d1b26f]">{t.price}</span>
+                    </p>
+                  )}
+
+                  <p
+                    className="text-[#f5e1a4] text-sm sm:text-base leading-relaxed 
+                      group-hover:text-[#fff7da] transition-colors duration-300"
+                  >
+                    {t.desc}
                   </p>
-                )}
-                <p className="mt-2 text-[#f5e1a4] text-sm sm:text-base leading-relaxed">
-                  {t.desc}
-                </p>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </section>
 

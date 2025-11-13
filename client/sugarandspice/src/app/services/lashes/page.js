@@ -26,9 +26,18 @@ export default function Page() {
         <div
           className="absolute inset-0 bg-fixed bg-cover bg-center opacity-30"
           style={{
-            backgroundImage: "url('/assets/images/0K6A0244-1-copy.jpg')",
+            backgroundImage: "url('/assets/images/sugarspice_01.jpg')",
           }}
-        ></div>
+        >
+          <Image
+            src="/assets/images/sugarspice_01.jpg"
+            alt="Lashes Background"
+            width={500}
+            height={500}
+            style={{ objectFit: "cover" }}
+            priority
+          />
+        </div>
 
         <motion.div
           className="relative z-10 max-w-3xl mx-auto px-6"

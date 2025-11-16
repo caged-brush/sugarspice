@@ -28,16 +28,7 @@ export default function Page() {
           style={{
             backgroundImage: "url('/assets/images/sugarspice_01.jpg')",
           }}
-        >
-          <Image
-            src="/assets/images/sugarspice_01.jpg"
-            alt="Lashes Background"
-            width={500}
-            height={500}
-            style={{ objectFit: "cover" }}
-            priority
-          />
-        </div>
+        ></div>
 
         <motion.div
           className="relative z-10 max-w-3xl mx-auto px-6"

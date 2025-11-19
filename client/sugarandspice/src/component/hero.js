@@ -9,7 +9,7 @@ export default function Hero() {
     <section
       className="relative bg-black text-[#f5e1a4] overflow-hidden bg-center bg-cover bg-no-repeat bg-fixed"
       style={{
-        backgroundImage: "url('/assets/images/SSBB background 3.png')",
+        backgroundImage: "url('/assets/images/1.png')",
       }}
     >
       {/* Animated gold shimmer overlay */}

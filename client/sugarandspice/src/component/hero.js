@@ -78,9 +78,9 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="flex justify-center lg:justify-end mb-10 lg:mb-0"
         >
-          <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl overflow-hidden rounded-[2rem] border border-[#d4af37]/30 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
+          <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl overflow-hidden mt-5 rounded-[2rem] border border-[#d4af37]/30 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
             <Image
-              src="/assets/images/hero-image.jpg"
+              src="/assets/images/SugarSpice_112.jpg"
               alt="Luxury beauty treatment"
               width={900}
               height={900}

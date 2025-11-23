@@ -63,14 +63,14 @@ export default function Page() {
             {
               title: "Lash Removal",
               price: "$35.00 • 45 minutes",
-              img: "/assets/images/0K6A0148-1 copy.jpg",
+              img: "/assets/images/lash_removal.jpg",
               link: "https://sugarandspicebeautybar.janeapp.com/#/discipline/4/treatment/209",
             },
             {
               title: "Dramatic",
 
               price: "$280.00 • 195 minutes",
-              img: "/assets/images/0K6A0244-1 copy.jpg",
+              img: "/assets/images/dramatic_lashes.jpg",
               link: "https://sugarandspicebeautybar.janeapp.com/#/discipline/4/treatment/231",
             },
           ].map((service, i) => (

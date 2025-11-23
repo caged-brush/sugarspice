@@ -80,7 +80,7 @@ export default function Page() {
         >
           <div className="relative w-full max-w-md">
             <Image
-              src="/assets/images/0K6A0148-1 copy.jpg"
+              src="/assets/images/0K6A0161-1 copy.jpg"
               alt="About Us"
               width={400}
               height={400}

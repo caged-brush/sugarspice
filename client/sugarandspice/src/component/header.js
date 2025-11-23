@@ -83,10 +83,10 @@ export default function Header() {
                     Lashes
                   </Link>
                   <Link
-                    href="/services/sweetPackages"
+                    href="/services/lashandbrow"
                     className="px-4 py-2 hover:bg-[#d1b26f] hover:text-black transition-colors"
                   >
-                    Sweet Packages
+                    Lash & Brow Lifting
                   </Link>
                 </div>
               </motion.div>

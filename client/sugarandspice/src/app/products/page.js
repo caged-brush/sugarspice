@@ -19,7 +19,7 @@ const Page = () => {
         <p className="text-lg text-gray-600 max-w-xl mb-8">
           We’re working on something beautiful. Stay tuned for our curated line
           of premium products.
-        </p>
+        </p> 
 
         <div className="animate-pulse text-pink-500 font-semibold text-xl">
           Launching Soon ✨

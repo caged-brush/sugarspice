@@ -16,7 +16,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 z-[9999]">
           <Image
-            src="/assets/images/sugarspice logo.jpeg"
+            src="/assets/images/sugarnspice logo.jpeg"
             alt="Sugar & Spice Logo"
             width={60}
             height={60}

@@ -80,7 +80,7 @@ export default function Hero() {
         >
           <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl overflow-hidden mt-5 rounded-[2rem] border border-[#d4af37]/30 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
             <Image
-              src="/assets/images/SugarSpice_112.jpg"
+              src="/assets/images/sugarnspice_112.jpg"
               alt="Luxury beauty treatment"
               width={900}
               height={900}

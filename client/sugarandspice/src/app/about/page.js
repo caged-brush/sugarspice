@@ -17,34 +17,34 @@ const fadeUp = {
   visible: (i = 1) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.08, duration: 0.6, ease: "easeOut" },
   }),
 };
 
 const coreValues = [
   {
     title: "Teamwork",
-    desc: "Creating a culture within our team based on effective communication, respect, integrity, and an understanding that together we can achieve more.",
+    desc: "Creating a team culture built on communication, respect, integrity, and the belief that together we achieve more.",
     icon: <FaUsers className="text-[#d1b26f] w-8 h-8" />,
   },
   {
     title: "Passion",
-    desc: "Our drive for excellence fuels continued growth and refinement in the beauty wellness industry.",
+    desc: "A commitment to excellence that drives growth and innovation in the beauty and wellness space.",
     icon: <FaFire className="text-[#d1b26f] w-8 h-8" />,
   },
   {
     title: "Respect",
-    desc: "Honoring our clients and each other by valuing thoughts, feelings, and preferences.",
+    desc: "Honoring every client’s thoughts, feelings, and preferences with empathy and care.",
     icon: <FaHandSparkles className="text-[#d1b26f] w-8 h-8" />,
   },
   {
     title: "Excellence",
-    desc: "Delivering detail-oriented, exceptional experiences that surpass expectations.",
+    desc: "Delivering highly-detailed, elevated service that consistently exceeds expectations.",
     icon: <FaGem className="text-[#d1b26f] w-8 h-8" />,
   },
   {
     title: "Integrity",
-    desc: "Commitment to honesty, always acting in the best interest of our clients.",
+    desc: "Always acting with honesty and putting the client's best interests first.",
     icon: <FaBalanceScale className="text-[#d1b26f] w-8 h-8" />,
   },
 ];
@@ -54,66 +54,141 @@ export default function Page() {
     <>
       <Header />
 
-      {/* Hero */}
-      <section className="relative flex flex-col lg:flex-row items-center justify-center bg-black px-4 sm:px-8 lg:px-16 pt-24 pb-16 overflow-hidden">
-        <motion.div
-          className="lg:w-1/2 text-center lg:text-left"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-[Ms Madi] font-bold text-[#d1b26f] drop-shadow-[0_2px_4px_rgba(209,178,111,0.6)]">
-            About Sugar & Spice
-          </h1>
-          <p className="mt-6 text-lg sm:text-xl text-[#f5e1a4] leading-relaxed">
-            We combine luxury and technology to create the ultimate beauty
-            experience. Our treatments are designed to nourish, rejuvenate, and
-            reveal your natural radiance.
-          </p>
-        </motion.div>
+      <main
+        className="relative bg-black text-[#d1b26f] min-h-screen px-4 sm:px-8 lg:px-16 overflow-hidden bg-center bg-cover bg-fixed"
+        style={{
+          backgroundImage: "url('/assets/images/5.png')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+        {/* ==== HERO + MISSION SPLIT SECTION ==== */}
+        <div className="relative z-10">
+          <section className=" px-4 sm:px-8 lg:px-16 pt-24 pb-12">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* LEFT TEXT */}
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-[Ms Madi] font-bold text-[#d1b26f] mb-6">
+                  About Sugar & Spice
+                </h1>
 
-        <motion.div
-          className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="relative w-full max-w-md">
-            <Image
-              src="/assets/images/0K6A0161-1 copy.jpg"
-              alt="About Us"
-              width={400}
-              height={400}
-              className="rounded-4xl shadow-2xl border border-[#d1b26f] object-cover w-full h-auto hover:shadow-[0_0_50px_rgba(209,178,111,0.8)] transition-shadow duration-500"
-            />
-          </div>
-        </motion.div>
-      </section>
+                <p className="text-lg sm:text-xl text-[#f5e1a4] leading-relaxed mb-8">
+                  We blend luxury, advanced aesthetics, and personalized care to
+                  help you feel confident, radiant, and restored.
+                </p>
 
-      {/* Core Values Tiles */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {coreValues.map((value, idx) => (
-          <motion.div
-            key={idx}
-            className="bg-gradient-to-b from-[#1a1a1a] to-[#111111] border border-[#d1b26f] rounded-3xl p-6 flex flex-col items-start gap-4 hover:scale-105 hover:shadow-[0_0_25px_rgba(209,178,111,0.7)] transition-all duration-500"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeUp}
-            custom={idx + 1}
-          >
-            <div className="flex items-center gap-4">
-              {value.icon}
-              <h3 className="text-xl sm:text-2xl font-bold text-[#d1b26f] drop-shadow-[0_1px_2px_rgba(209,178,111,0.8)]">
-                {value.title}
-              </h3>
+                {/* Mission Statement embedded here */}
+                <div className="bg-[#111]/80 border border-[#d1b26f]/40 rounded-3xl p-6 shadow-[0_0_25px_rgba(209,178,111,0.25)]">
+                  <h2 className="text-2xl font-bold font-[Ms Madi] text-[#d1b26f] mb-3">
+                    Our Mission
+                  </h2>
+                  <p className="text-[#f5e1a4] text-base sm:text-lg leading-relaxed">
+                    Sugar & Spice Medi Spa provides exceptional, customized
+                    Aesthetics services that empower clients to achieve beauty
+                    and confidence in a nurturing environment.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* RIGHT IMAGE */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="flex justify-center"
+              >
+                <div className="w-full max-w-sm">
+                  <Image
+                    src="/assets/images/0K6A0161-1 copy.jpg"
+                    alt="About Us"
+                    width={350}
+                    height={350}
+                    className="rounded-3xl shadow-2xl border border-[#d1b26f] object-cover w-full h-auto"
+                  />
+                </div>
+              </motion.div>
             </div>
-            <p className="text-[#f5e1a4] text-base sm:text-lg leading-relaxed">
-              {value.desc}
-            </p>
-          </motion.div>
-        ))}
-      </section>
+          </section>
+
+          {/* ==== TESTIMONIALS SECTION ==== */}
+          <section className="py-20 px-4 sm:px-10 lg:px-20 relative z-10">
+            <div className="max-w-5xl mx-auto text-center">
+              <motion.h2
+                className="text-4xl sm:text-5xl font-[Ms Madi] text-[#d1b26f] mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                What Our Clients Say
+              </motion.h2>
+
+              <motion.p
+                className="text-[#f5e1a4] max-w-2xl mx-auto mb-12 text-lg leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                We’re proud to serve hundreds of happy clients. Read real
+                experiences from real people and see why Sugar & Spice Medi Spa
+                is trusted for luxury beauty + wellness services.
+              </motion.p>
+
+              <motion.a
+                href="https://www.google.com/search?sca_esv=239f16d3ff377c19&hl=en&sxsrf=AE3TifPrwfHvlQajM3a4HUurY1NMTvjcvA:1764236660898&si=AMgyJEuzsz2NflaaWzrzdpjxXXRaJ2hfdMsbe_mSWso6src8s9kwCiFD89DoE3JYPHy3YV36eo5rbNktBtNXE-Ai824jmzTb8EG02aF6E-I72CAgoV00-lXfEl-KU9QWYpEoekwvhktmAqoPP3kflFjsaBR1PPr-lg%3D%3D&q=Sugar+And+Spice+Beauty+Bar+Reviews&sa=X&ved=2ahUKEwjz0ePbhZKRAxXoGTQIHUppEb8Q0bkNegQIIBAE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#d1b26f] text-black font-semibold px-8 py-4 rounded-2xl 
+        shadow-[0_0_20px_rgba(209,178,111,0.4)] hover:shadow-[0_0_35px_rgba(209,178,111,0.6)]
+        hover:bg-white transition-all duration-300"
+              >
+                ⭐ Read Our Google Reviews
+              </motion.a>
+            </div>
+          </section>
+
+          {/* ==== CORE VALUES ===== */}
+          <section className="py-12 px-4 sm:px-8 lg:px-16">
+            <div className="max-w-7xl mx-auto">
+              <motion.h2
+                className="text-3xl sm:text-4xl font-[Ms Madi] text-[#d1b26f] text-center mb-12"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                Our Core Values
+              </motion.h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {coreValues.map((value, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] border border-[#d1b26f]/50 rounded-3xl p-6 flex flex-col gap-4 shadow-[0_0_15px_rgba(209,178,111,0.15)] hover:shadow-[0_0_35px_rgba(209,178,111,0.4)] hover:scale-[1.03] transition-all duration-400"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    custom={idx + 1}
+                  >
+                    <div className="flex items-center gap-4">
+                      {value.icon}
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#d1b26f]">
+                        {value.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-[#f5e1a4] text-base sm:text-lg leading-relaxed">
+                      {value.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
 
       <Footer />
     </>

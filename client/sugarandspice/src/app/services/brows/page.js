@@ -58,11 +58,11 @@ export default function Page() {
       <main
         className="relative bg-black text-[#d1b26f] pt-24 min-h-screen px-6 sm:px-10 lg:px-20 overflow-hidden bg-fixed bg-center bg-cover"
         style={{
-          backgroundImage: "url('/assets/images/SSBB background 3.png')",
+          backgroundImage: "url('/assets/images/2.png')",
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
 
         <div className="relative z-10">
           {/* Hero Section */}

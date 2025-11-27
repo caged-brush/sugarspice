@@ -23,7 +23,7 @@ export default function Page() {
       <main
         className="relative bg-black text-[#d1b26f] pt-24 min-h-screen px-4 sm:px-8 lg:px-16 overflow-hidden bg-center bg-cover bg-fixed"
         style={{
-          backgroundImage: "url('/assets/images/1.png')",
+          backgroundImage: "url('/assets/images/4.png')",
         }}
       >
         <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>

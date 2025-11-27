@@ -84,7 +84,7 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="/assets/images/SugarSpice_051.jpg"
+                src="/assets/images/sugarnspice_051.jpg"
                 alt="Luxury facial treatment"
                 className="w-full h-full object-contain object-center"
               />

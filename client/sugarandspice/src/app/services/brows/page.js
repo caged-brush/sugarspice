@@ -101,7 +101,7 @@ export default function Page() {
             <div
               className="absolute inset-0 bg-fixed bg-center bg-cover"
               style={{
-                backgroundImage: "url('/assets/images/brows3.jpg')",
+                backgroundImage: "url('/assets/images/brow3.jpg')",
                 transform: "translateZ(0)",
               }}
             ></div>

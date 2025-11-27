@@ -20,10 +20,10 @@ const page = () => {
     { src: "/assets/images/facial.jpg", category: "Facials" },
     { src: "/assets/images/facial2.jpg", category: "Facials" },
 
-    { src: "/assets/images/sugarspice_01.jpg", category: "Studio" },
-    { src: "/assets/images/sugarspice_003.jpg", category: "Studio" },
-    { src: "/assets/images/sugarspice_051.jpg", category: "Studio" },
-    { src: "/assets/images/sugarspice_112.jpg", category: "Studio" },
+    { src: "/assets/images/sugarnspice_01.jpg", category: "Studio" },
+    { src: "/assets/images/sugarnspice_003.jpg", category: "Studio" },
+    { src: "/assets/images/sugarnspice_051.jpg", category: "Studio" },
+    { src: "/assets/images/sugarnspice_112.jpg", category: "Studio" },
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");

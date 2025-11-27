@@ -160,7 +160,7 @@ export default function FacialsPage() {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="/assets/images/facials2.jpg"
+                src="/assets/images/facial2.jpg"
                 alt="Luxury facial treatment"
                 className="w-full h-full object-contain object-center"
               />

@@ -21,9 +21,9 @@ const page = () => {
     { src: "/assets/images/facials2.jpg", category: "Facials" },
 
     { src: "/assets/images/sugarspice_01.jpg", category: "Studio" },
-    { src: "/assets/images/SugarSpice_003.jpg", category: "Studio" },
-    { src: "/assets/images/SugarSpice_051.jpg", category: "Studio" },
-    { src: "/assets/images/SugarSpice_112.jpg", category: "Studio" },
+    { src: "/assets/images/sugarSpice_003.jpg", category: "Studio" },
+    { src: "/assets/images/sugarSpice_051.jpg", category: "Studio" },
+    { src: "/assets/images/sugarSpice_112.jpg", category: "Studio" },
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");
